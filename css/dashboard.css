@@ -50,9 +50,9 @@ body.vendor .show-admin-vendor-flex {
 }
 
 /* Dashboard Specific Hides */
-body.client .inventory-panel {
+/* body.client .inventory-panel {
     display: none !important;
-}
+} */
 
 body.vendor .plot-list {
     display: grid;
@@ -356,11 +356,6 @@ body.vendor .plot-card {
     margin-top: 10px;
 }
 
-/* Botones siempre visibles */
-.btn-report {
-    display: flex !important;
-}
-
 .plot-card.expanded .plot-features {
     display: flex;
     padding-top: 10px;
@@ -397,8 +392,8 @@ body.vendor .plot-card {
 .plot-features {
     display: flex;
     gap: 8px;
-    margin-top: 10px;
-    padding-top: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 

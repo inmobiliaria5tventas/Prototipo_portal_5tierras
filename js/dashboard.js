@@ -6,7 +6,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     try {
         const urlParams = new URLSearchParams(window.location.search);
-        const role = urlParams.get('role') || 'admin';
+        const role = urlParams.get('role');
+
+        if (!role) {
+            console.warn("No role specified. Redirecting to portal...");
+            window.location.href = 'index.html';
+            return;
+        }
 
         document.body.classList.add(role);
         console.log("Dashboard Role:", role);
@@ -321,7 +327,7 @@ function initDashboard(role) {
                         <i class="fas fa-file-pdf"></i> Ficha
                     </button>
                     <a href="https://drive.google.com/drive/folders/lote_${props.Lote}" target="_blank" class="btn-report" style="flex:1; background:#4285f4; text-decoration:none;" onclick="event.stopPropagation();">
-                        <i class="fas fa-folder-open"></i> Docs
+                        <i class="fas fa-gavel"></i> Ver Legal
                     </a>
                 </div>
             `;
@@ -352,8 +358,8 @@ function initDashboard(role) {
                         </div>
                         <p class="plot-description">${descripcion}</p>
                     </div>
-                    ${featuresHtml}
                 </div>
+                ${featuresHtml}
             `;
             card.onclick = (e) => {
                 // Toggle expansion
